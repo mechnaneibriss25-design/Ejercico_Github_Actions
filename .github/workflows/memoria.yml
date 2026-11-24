@@ -1,7 +1,6 @@
 name: Guardar uso de memoria
 on:
-  push:
-  branches: [main]
+  push
   
 jobs:
   memoria:
@@ -17,7 +16,7 @@ jobs:
           free -h > memoria_j1/memoria.txt
           
       - name: Guardar archivo para descarga
-        uses: action/upload-artifact@v4
+        uses: actions/upload-artifact@v4
         with:
           name: memoria_j1
           path: memoria_j1/memoria.txt
