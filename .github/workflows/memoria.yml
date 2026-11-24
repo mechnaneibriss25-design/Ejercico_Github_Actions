@@ -1,0 +1,13 @@
+memoria: 
+    runs-on: ubunto-latest
+  
+    steps:
+      - name: Crear archivo con la memoria
+        run: |
+          mkdir -p memoria_j1
+          free -h > memoria_j1/memoria.txt
+      - name: Guardar archivo para descarga
+        uses: action/upload-artifact@v4
+        with:
+          name: memoria_j1
+          path: memoria_j1/memoria.txt
