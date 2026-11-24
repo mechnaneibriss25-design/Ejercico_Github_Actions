@@ -1,4 +1,9 @@
-memoria: 
+name: Guardar uso de memoria
+on:
+  push:
+  
+jobs:
+  memoria:
     runs-on: ubunto-latest
   
     steps:
@@ -6,6 +11,7 @@ memoria:
         run: |
           mkdir -p memoria_j1
           free -h > memoria_j1/memoria.txt
+          
       - name: Guardar archivo para descarga
         uses: action/upload-artifact@v4
         with:
