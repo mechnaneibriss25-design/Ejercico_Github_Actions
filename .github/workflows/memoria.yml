@@ -1,12 +1,16 @@
 name: Guardar uso de memoria
 on:
   push:
+  branches: [main]
   
 jobs:
   memoria:
     runs-on: ubunto-latest
   
     steps:
+      - name: Descarga repositorio
+        uses: actions/checkout@v4
+        
       - name: Crear archivo con la memoria
         run: |
           mkdir -p memoria_j1
